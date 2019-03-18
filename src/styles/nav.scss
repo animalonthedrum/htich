@@ -1,0 +1,28 @@
+nav {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        max-width: 100vw;
+        list-style: none;
+        align-items: center;
+        margin: 0;
+        padding: 40px 20px 0 40px;
+        .home {
+            margin-right: auto;
+        }
+        li:first-of-type {
+           flex-grow: 2; 
+           padding: 0;
+        }
+        li {
+            padding: 0 20px;
+            a {
+                color: #fff;
+                font-weight: 700;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
