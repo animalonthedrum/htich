@@ -12,3 +12,36 @@
         max-height: 79px;
     }
 }
+.aboutContainer {
+    display: flex;
+    .aboutL {
+        background-color: $shell;
+        ul {
+            list-style: none;
+            padding-inline-start: 0;
+            li {
+                display: flex;
+                align-items:center;
+                &:before {
+                    content:'';
+                    background-image:url('./images/compass.png');
+                    background-size: contain;
+                    height: 35px;
+                    width: 35px;
+                    display: inline-block;
+                    margin-right: $margin;
+                    
+                }
+            }
+        }
+    }
+    .aboutR {
+        display: flex;
+        flex-direction: column;
+       
+        p {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

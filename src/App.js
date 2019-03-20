@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Scroll from './components/Scroll';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faEnvelope, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add( faEnvelope, faPhone, fab );
+library.add( faEnvelope, faPhone, faChevronDown, faChevronUp, fab );
 
 class App extends Component {
   render() {
