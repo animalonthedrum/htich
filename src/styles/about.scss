@@ -14,8 +14,11 @@
 }
 .aboutContainer {
     display: flex;
+    @media only screen and (max-width:$breakpoint-mobile-max) {
+        flex-direction: column;
+    }
     .aboutL {
-        background-color: $shell;
+        background-color: $robin;
         ul {
             list-style: none;
             padding-inline-start: 0;
@@ -38,6 +41,11 @@
     .aboutR {
         display: flex;
         flex-direction: column;
+        max-width: 100%;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
        
         p {
             display: flex;

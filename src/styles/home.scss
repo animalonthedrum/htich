@@ -15,6 +15,59 @@
         h1,h2 {
             color: #fff;
         }
+        h1 {
+            transform: scale(1.5);
+            animation: zoomText 2s 1 .2s linear;
+            opacity: 1;
+            @include font-title;
+        }
+        h2 {
+            animation: fadeUp 2.5s 1 0s linear;
+            opacity: 1;
+            transform: translateY(0);
+            margin:0;
+            @include h2;
+            
+        }
     }
 
 }
+
+@keyframes zoomText{
+    0%{
+        transform: scale(.75);
+        opacity: 0;
+        }
+    50%{
+        transform:scale(1.1);
+        opacity: .5;
+        }
+    100%{
+        transform:scale(1.5);
+        opacity: 1;
+        }
+}
+
+@keyframes fadeUp{
+    0%{
+        transform: translateY(35px);
+        opacity: 0;
+        }
+    25%{
+        transform:  translateY(20px);
+        opacity: 0.1;
+        }
+    50%{
+        transform:translateY(15px);
+        opacity: 0.1;
+        }
+    75%{
+        transform:translateY(10px);
+        opacity: 0.3;
+        }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+        }
+}
+

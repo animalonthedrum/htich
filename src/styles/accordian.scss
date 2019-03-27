@@ -7,15 +7,36 @@ $cLightGray: rgba(#000, 0.1);
   list-style: none;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+//   background-color: #fff;
   max-width: 30rem;
   border-radius: 0.4rem;
   overflow: hidden;
-  box-shadow:
-    0 0 0.8rem 0.1rem rgba(darken($cAccent, 20%), 0.06),
-    0 20px 30px -10px rgba(darken($cAccent, 20%), 0.2);
+//   box-shadow:
+//     0 0 0.8rem 0.1rem rgba(darken($cAccent, 20%), 0.06),
+//     0 20px 30px -10px rgba(darken($cAccent, 20%), 0.2);
   
   &__item{
+    &:before {
+        content:'01';
+        display: block;
+        font-family: inherit;
+        font-size: 12px;
+        color: inherit;
+        height: 15px;
+        width: 15px;
+    }
+    &:nth-of-type(2) {
+        &:before {content:'02'}
+        
+    }
+    &:nth-of-type(3) {
+        &:before {content:'03'}
+        
+    }
+    &:nth-of-type(4) {
+        &:before {content:'04'}
+        
+    }
     &+&{
       border-top: 1px solid $cLightGray;
     }
@@ -23,7 +44,8 @@ $cLightGray: rgba(#000, 0.1);
 }
 
 .accordion-item{
-  $self: &;
+  
+    $self: &;
 
   &--opened{    
     #{ $self }__icon{
@@ -32,18 +54,13 @@ $cLightGray: rgba(#000, 0.1);
         
     #{ $self }__inner{
       max-height: 100rem;
-      transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-      transition-duration: 0.5s;
-      transition-property: max-height;
+      transition: max-height 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
     
     #{ $self }__content{
       opacity: 1;
       transform: translateY(0);
-      transition-delay: 0.2s;
-      transition-timing-function: ease-in-out;
-      transition-duration: 0.2s;
-      transition-property: opacity, transform;
+      transition: opacity 0.2s 0.2s ease-in-out, transform 0.2s 0.2s ease-in-out;
     }
   }
 
@@ -53,7 +70,7 @@ $cLightGray: rgba(#000, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    // background-color: #fff;
     z-index: 2;
     position: relative;
   }

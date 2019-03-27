@@ -1,0 +1,43 @@
+.inspirationContainer {
+    display: flex;
+    max-width: 100%;
+    padding: 100px 50px 0 50px;
+    position: relative;
+    &:before {
+        content:'';
+        background-color: $sky;
+        height: 80%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    @media only screen and (max-width:$breakpoint-mobile-max) {
+        flex-direction: column;
+    }
+    .inspirationL {
+        max-width:50%;
+        padding-right: 25px;
+        padding-top: 50px;
+        @media only screen and (max-width:$breakpoint-mobile-max) {
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    .inspirationR {
+        max-width:50%;
+        padding-left: 25px;
+        @media only screen and (max-width:$breakpoint-mobile-max) {
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    .dest {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}

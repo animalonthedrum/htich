@@ -4,7 +4,7 @@ import HomeHero from '.././pages/HomeHero';
 import About from '.././pages/About';
 import Details from '.././pages/Details';
 import Gallery from '.././pages/Gallery';
-import Story from '.././pages/Story';
+import Inspiration from '.././pages/Inspiration';
 import Footer from './Footer';
 
 
@@ -78,6 +78,7 @@ export default class Scroll extends Component {
 
           <Element name="about" className="element"style={{
             height: '100%',
+            display:'flex',
             backgroundColor:'inherit'
           }}>
             <About />
@@ -85,15 +86,15 @@ export default class Scroll extends Component {
 
           <Element name="details" className="element"style={{
             height: '100%',
-            backgroundColor:'seagreen'
+            backgroundColor:'#fff'
           }}>
             <Details />
         </Element>
-        <Element name="story" className="element ourStoryTitle"style={{
+        <Element name="story" className="element"style={{
             height: '100%',
-            backgroundColor:'forestgreen'
+            backgroundColor:'inherit'
           }}>          
-           <Story />
+           <Inspiration />
         </Element>
           <Element name="gallery" className="element"style={{
             height: '100%',

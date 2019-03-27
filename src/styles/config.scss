@@ -1,30 +1,98 @@
-// font-family: itc-avant-garde-gothic-pro, sans-serif;
-
-// font-weight: 700;
-
-// font-style: normal;
-
-// font-family: itc-avant-garde-gothic-pro, sans-serif;
-
-// font-weight: 300;
-
-// font-style: normal;
-
+$transition-linear:.2s linear;
 //COLORS
-
-$midnight:#001341;
-$mustard:#d3b400;
-$canvas:#fbf1b6;
-$cayenne:#f92e3f;
-$shell:#f1ded8;
-$navy:#0c2666;
-$indigo:#142D6C;
-$white:#FCFCFC;
-
+$primary:#0C2666;
+$sky:#647A91;
+$mustard:#D3B400;
+$eggshell:#CBD1DD;
+$robin:#D5F1ED;
+$forest:#232D1F;
 
 //FONT IMPORTS & STYLES
+@import url("https://use.typekit.net/zre1kdu.css");
+$font-primary:baskerville-urw, serif; //400,500,700
+$font-italic: nunito, sans-serif; //300, 400
+$font-title: professor, sans-serif; //400
+
+@mixin font-title($font-title-size:72px, $font-title-color:#fff) {
+    font-family: $font-title;
+    font-weight: 400;
+    font-style: normal;
+    color: $font-title-color;
+    font-size: $font-title-size;
+}
+@mixin h2 ($font-h2-size:40px, $font-h2-color:#fff) {
+    font-family: $font-primary;
+    font-weight: 400;
+    font-style: normal;
+    color: $font-h2-color;
+    font-size: $font-h2-size;
+}
+
+@mixin nav-font($nav-font-color:#fff, $nav-font-size:20px) {
+    font-family: $font-primary;
+    font-weight: 500;
+    font-style: normal;
+    color: $nav-font-color;
+    font-size: $nav-font-size;
+    position: relative;
+        &:after {
+            content:'';
+            width: 0;
+            height: 2px;
+            background-color: $nav-font-color;
+            transition: width $transition-linear;
+            display: block;
+            position: absolute;
+            bottom: 0;
+        }
+        &:hover {
+            cursor: pointer;
+            &:after {
+                width: 100%;
+            }
+        }
+}
+
+@mixin button($button-color:#fff, $button-fill:$mustard, $button-font-size:20px, $padding:10px 20px){
+    border: 1px solid $button-color;
+    font-family: $font-primary;
+    font-size: $button-font-size;
+    color: $button-color;
+    padding: $padding;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    &:hover:after {
+        display: none;
+    }
+    &:before {
+        content:'';
+        background-color: $button-fill;
+        width:0;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform-origin: left;
+        transition: width $transition-linear;
+    }
+    &:hover {
+        &:before {
+            width: 100%;
+        }
+    }
+}
+.button {
+    @include button;
+}
 
 
+//BREAKPOINTS
+$breakpoint-mobile-max:767px;
+$breakpoint-inter-min:768px;
+$breakpoint-inter-max:999px;
 
 $margin:20px;
 $padding:20px;

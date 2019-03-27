@@ -1,18 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-scroll';
+import ToggleButton from './ToggleButton';
 
-export default class Anchors extends Component {
-  render() {
-    return (
+const Anchors = props => (
         <nav>
                 <ul className="navbar">
-                    <li><Link activeClass="active" className="slide home" to="homeHero" spy={false} smooth={true} duration={700}>Hitch.</Link></li>
+                    <li><Link activeClass="active" className="slide home" to="homeHero" spy={false} smooth={true} duration={700}></Link></li>
                     <li><Link activeClass="active" className="slide about" to="about" spy={true} smooth={true} duration={700}>About</Link></li>
                     <li><Link activeClass="active" className="slide details" to="details" spy={true} smooth={true} duration={700}>Details</Link></li>
                     <li><Link activeClass="active" className="slide story" to="story" spy={true} smooth={true} duration={700} >Story</Link></li>
                     <li><Link activeClass="active" className="slide gallery" to="gallery" spy={true} smooth={true} duration={700}>Gallery</Link></li>
                     <li><Link activeClass="active" className="slide footer" to="footer" spy={true} smooth={true} duration={700}>Footer</Link></li>
-                    <li><a href="https://www.outdoorsy.com/">Book Now</a></li>
+                    <li><a className='button' href="https://www.outdoorsy.com/">Book Now</a></li>
                     {/* <li><Link activeClass="active" className="test6" to="anchor" spy={true} smooth={true} duration={500}>Test 6 (anchor)</Link></li>
                     <li> <a onClick={() => scroll.scrollTo(100)}>Scroll To 100!</a></li>
                     <li> <a onClick={() => scroll.scrollToBottom()}>Scroll To Bottom</a></li>
@@ -23,7 +22,10 @@ export default class Anchors extends Component {
                     <li><a className="test1" to="test1" onClick={() => this.scrollTo()} >Scroll to element</a></li>
                     <li><a className="test1" to="test1" onClick={() => this.scrollToWithContainer()} >Scroll to element within container</a></li> */}
                 </ul>
+                <div className="toolbar__toggle-button">
+                <ToggleButton click={props.navClickHandler} />
+                </div>
           </nav>
     )
-  }
-}
+
+export default Anchors

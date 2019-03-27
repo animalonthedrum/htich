@@ -5,19 +5,19 @@ const paragraph = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Even
 
 const data = [
   {
-    title: 'Pricing plans',
+    title: 'There’s room for two.',
+    paragraph: 'Fully stocked cooking area that includes everything but the kitchen sink. Propane stove, pots and pans of various sizes, plates and cutlery for 4 and coffee making supplies, including da beans. Something else you need and not sure if we have? Send us a message, odds are we have it.'
+  },
+  {
+    title: 'The kitchen is fully stocked.',
     paragraph
   },
   {
-    title: 'How to apply',
+    title: 'You have the power.',
     paragraph
   },
   {
-    title: 'Purchasing process',
-    paragraph
-  },
-  {
-    title: 'Usage guides',
+    title: 'Totally Towable.',
     paragraph
   }
 ]
@@ -50,8 +50,8 @@ class AccordionItem extends React.Component {
   render () {
     const {
       props: {
-        paragraph,
-        title
+        title,
+        paragraph
       },
       state: {
         opened

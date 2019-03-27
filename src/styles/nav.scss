@@ -17,12 +17,12 @@ nav {
         li {
             padding: 0 20px;
             a {
-                color: #fff;
-                font-weight: 700;
-                &:hover {
-                    cursor: pointer;
-                }
+                @include nav-font;
             }
         }
+        @media only screen and (max-width:$breakpoint-inter-min) {
+            display: none;
+        }
     }
+
 }
